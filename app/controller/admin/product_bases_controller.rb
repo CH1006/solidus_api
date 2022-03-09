@@ -1,14 +1,14 @@
-class Admin::ProductBasesController < Admin::BaseController
+class Admin::ProductBasesController < Spree::Admin::BaseController
     skip_before_action :verify_authenticity_token
     def index
-      @product_bases = Spree::ProductBase.all
+      @product_bases = ProductBase.all
       respond_to do |format|
         format.html 
         format.json { render json: @product_bases }
       end
     end
     def create
-      @product_base = Spree::ProductBase.new(base_params)
+      @product_base = ProductBase.new(base_params)
       if @product_base.save
         render json: { status: :ok, message: 'Success' }
       else
@@ -16,7 +16,7 @@ class Admin::ProductBasesController < Admin::BaseController
       end
     end
     def show
-      @product_base = Spree::ProductBase.find(params[:id])
+      @product_base = ProductBase.find(params[:id])
       respond_to do |format|
         format.html 
         format.json { render json: @product_base }
@@ -24,7 +24,7 @@ class Admin::ProductBasesController < Admin::BaseController
     end
   
     def update
-      @product_base = Spree::ProductBase.find(params[:id])
+      @product_base = ProductBase.find(params[:id])
       if @product_base.update(base_params)
         render json: { status: :ok, message: 'Success' }
       else
@@ -33,7 +33,7 @@ class Admin::ProductBasesController < Admin::BaseController
     end
   
     def destroy
-      @product_base = Spree::ProductBase.find(params[:id])
+      @product_base = ProductBase.find(params[:id])
       if @product_base.destroy
         render json: { json: 'ProductBase was successfully deleted.'}
       else
