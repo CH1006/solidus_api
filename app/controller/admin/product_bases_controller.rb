@@ -1,4 +1,4 @@
-class Spree::Admin::ProductBasesController < Admin::BaseController
+class Admin::ProductBasesController < Admin::BaseController
     skip_before_action :verify_authenticity_token
     def index
       @product_bases = Spree::ProductBase.all
