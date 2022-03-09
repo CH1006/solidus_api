@@ -1,22 +1,22 @@
 # Solidus Api
 
-[![CircleCI](https://circleci.com/gh/solidusio-contrib/solidus_api.svg?style=shield)](https://circleci.com/gh/solidusio-contrib/solidus_api)
-[![codecov](https://codecov.io/gh/solidusio-contrib/solidus_api/branch/master/graph/badge.svg)](https://codecov.io/gh/solidusio-contrib/solidus_api)
+[![CircleCI](https://circleci.com/gh/solidusio-contrib/solidus_custom_api.svg?style=shield)](https://circleci.com/gh/solidusio-contrib/solidus_custom_api)
+[![codecov](https://codecov.io/gh/solidusio-contrib/solidus_custom_api/branch/master/graph/badge.svg)](https://codecov.io/gh/solidusio-contrib/solidus_custom_api)
 
 <!-- Explain what your extension does. -->
 
 ## Installation
 
-Add solidus_api to your Gemfile:
+Add solidus_custom_api to your Gemfile:
 
 ```ruby
-gem 'solidus_api'
+gem 'solidus_custom_api'
 ```
 
 Bundle your dependencies and run the installation generator:
 
 ```shell
-bin/rails generate solidus_api:install
+bin/rails generate solidus_custom_api:install
 ```
 
 ## Usage
@@ -45,14 +45,14 @@ When testing your application's integration with this extension you may use its 
 Simply add this require statement to your `spec/spec_helper.rb`:
 
 ```ruby
-require 'solidus_api/testing_support/factories'
+require 'solidus_custom_api/testing_support/factories'
 ```
 
 Or, if you are using `FactoryBot.definition_file_paths`, you can load Solidus core
 factories along with this extension's factories using this statement:
 
 ```ruby
-SolidusDevSupport::TestingSupport::Factories.load_for(SolidusApi::Engine)
+SolidusDevSupport::TestingSupport::Factories.load_for(SolidusCustomApi::Engine)
 ```
 
 ### Running the sandbox

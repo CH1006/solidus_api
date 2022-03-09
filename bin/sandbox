@@ -25,7 +25,7 @@ else
   BRANCH="master"
 fi
 
-extension_name="solidus_api"
+extension_name="solidus_custom_api"
 
 # Stay away from the bundler env of the containing extension.
 function unbundled {

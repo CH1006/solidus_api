@@ -1,5 +1,5 @@
 bump:
   recurse: false
   file: 'lib/solidus_api/version.rb'
-  message: Bump SolidusApi to %{version}
+  message: Bump SolidusCustomApi to %{version}
   tag: true

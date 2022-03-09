@@ -1,21 +1,21 @@
 # frozen_string_literal: true
 
-require_relative 'lib/solidus_api/version'
+require_relative 'lib/solidus_custom_api/version'
 
 Gem::Specification.new do |spec|
-  spec.name = 'solidus_api'
-  spec.version = SolidusApi::VERSION
+  spec.name = 'solidus_custom_api'
+  spec.version = SolidusCustomApi::VERSION
   spec.authors = ['huylc']
   spec.email = 'conghuy1006@gmail.com'
 
   spec.summary = 'API for Solidus'
   spec.description = 'API for Solidus'
-  spec.homepage = 'https://github.com/CH1006/solidus_api#readme'
+  spec.homepage = 'https://github.com/CH1006/solidus_custom_api#readme'
   spec.license = 'BSD-3-Clause'
 
   spec.metadata['homepage_uri'] = spec.homepage
-  spec.metadata['source_code_uri'] = 'https://github.com/CH1006/solidus_api'
-  spec.metadata['changelog_uri'] = 'https://github.com/CH1006/solidus_api/blob/master/CHANGELOG.md'
+  spec.metadata['source_code_uri'] = 'https://github.com/CH1006/solidus_custom_api'
+  spec.metadata['changelog_uri'] = 'https://github.com/CH1006/solidus_custom_api/blob/master/CHANGELOG.md'
 
   spec.required_ruby_version = Gem::Requirement.new('~> 2.5')
 
