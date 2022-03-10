@@ -10,15 +10,15 @@ module SolidusCustomApi
         template 'initializer.rb', 'config/initializers/solidus_custom_api.rb'
       end
 
-      def add_javascripts
-        append_file 'vendor/assets/javascripts/spree/frontend/all.js', "//= require spree/frontend/solidus_custom_api\n"
-        append_file 'vendor/assets/javascripts/spree/backend/all.js', "//= require spree/backend/solidus_custom_api\n"
-      end
+      # def add_javascripts
+      #   append_file 'vendor/assets/javascripts/spree/frontend/all.js', "//= require spree/frontend/solidus_custom_api\n"
+      #   append_file 'vendor/assets/javascripts/spree/backend/all.js', "//= require spree/backend/solidus_custom_api\n"
+      # end
 
-      def add_stylesheets
-        inject_into_file 'vendor/assets/stylesheets/spree/frontend/all.css', " *= require spree/frontend/solidus_custom_api\n", before: %r{\*/}, verbose: true # rubocop:disable Layout/LineLength
-        inject_into_file 'vendor/assets/stylesheets/spree/backend/all.css', " *= require spree/backend/solidus_custom_api\n", before: %r{\*/}, verbose: true # rubocop:disable Layout/LineLength
-      end
+      # def add_stylesheets
+      #   inject_into_file 'vendor/assets/stylesheets/spree/frontend/all.css', " *= require spree/frontend/solidus_custom_api\n", before: %r{\*/}, verbose: true # rubocop:disable Layout/LineLength
+      #   inject_into_file 'vendor/assets/stylesheets/spree/backend/all.css', " *= require spree/backend/solidus_custom_api\n", before: %r{\*/}, verbose: true # rubocop:disable Layout/LineLength
+      # end
 
       def add_react_gem
         run 'gem add react-rails'
@@ -36,7 +36,7 @@ module SolidusCustomApi
       end
 
       def install_antd
-        run 'yarn add antd'
+        run 'yarn add antd axios @ant-design/icons'
         # append_file 'app/javascript/packs/application.js', "require(\"antd/dist/antd.css\")"
       end
 
