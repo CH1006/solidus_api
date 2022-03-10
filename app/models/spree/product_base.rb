@@ -1,2 +1,2 @@
-class ProductBase < ApplicationRecord
+class Spree::ProductBase < ApplicationRecord
 end

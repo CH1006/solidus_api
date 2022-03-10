@@ -20,6 +20,34 @@ module SolidusCustomApi
         inject_into_file 'vendor/assets/stylesheets/spree/backend/all.css', " *= require spree/backend/solidus_custom_api\n", before: %r{\*/}, verbose: true # rubocop:disable Layout/LineLength
       end
 
+      def add_react_gem
+        run 'gem add react-rails'
+        append_file 'Gemfile', "\ngem \'react-rails\'"
+        run 'bundle install'
+      end
+
+      def install_webpacker
+        run 'bin/rails webpacker:install'
+      end
+
+      def install_react
+        run 'bin/rails webpacker:install:react'
+        run 'rails generate react:install'
+      end
+
+      def install_antd
+        run 'yarn add antd'
+        # append_file 'app/javascript/packs/application.js', "require(\"antd/dist/antd.css\")"
+      end
+
+      def copy_react_application
+        template 'javascript/packs/application.js', 'app/javascript/packs/application.js'
+        remove_file 'app/javascript/packs/hello_react.jsx'
+      end
+
+      def create_components
+        template 'javascript/components/ProductBases.js', 'app/javascript/components/ProductBases.js'
+      end
       def add_migrations
         run 'bin/rails railties:install:migrations FROM=solidus_custom_api'
       end
