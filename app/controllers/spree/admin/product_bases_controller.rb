@@ -1,7 +1,7 @@
 class Spree::Admin::ProductBasesController < Spree::Admin::BaseController
     skip_before_action :verify_authenticity_token
     def index
-      @product_bases = Spree::ProductBase.all
+      @product_bases = Spree::ProductBase.order('id ASC').all
       respond_to do |format|
         format.html 
         format.json { render json: @product_bases }
