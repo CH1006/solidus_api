@@ -36,7 +36,7 @@ module SolidusCustomApi
       end
 
       def install_antd
-        run 'yarn add antd axios @ant-design/icons'
+        run 'yarn add antd axios @ant-design/icons konva'
         # append_file 'app/javascript/packs/application.js', "require(\"antd/dist/antd.css\")"
       end
 
